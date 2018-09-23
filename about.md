@@ -18,3 +18,4 @@ title: About
 * Teamspeak: ts3.yaaf.de
 * [Mail](http://mail.yaaf.de)
 * [Drive](http://drive.yaaf.de)
+* [Calendar](http://calendar.yaaf.de)
