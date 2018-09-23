@@ -1,0 +1,70 @@
+﻿# Date: 2017-08-21; Title: Paket internals - how it works for you; Tags: fsharp,expression,paket,nuget; Author: Matthias Dittrich
+
+
+```fsharp
+
+type PackageDetails = {
+    Name               : PackageName
+    Source             : PackageSource
+    DownloadLink       : string
+    LicenseUrl         : string
+    Unlisted           : bool
+    DirectDependencies : DependencySet
+}
+
+type ResolvedPackage = {
+    Name                : PackageName
+    Version             : SemVerInfo
+    Dependencies        : DependencySet
+    Unlisted            : bool
+    IsRuntimeDependency : bool
+    IsCliTool           : bool
+    Settings            : InstallSettings
+    Source              : PackageSource
+} 
+```
+
+
+### Analyse the packages
+
+
+
+How do you get a NuGet package? In the most simple situation you write a [nuspec](https://docs.microsoft.com/en-us/nuget/schema/nuspec) and start `nuget.exe pack`. NuGet will create a [simple](https://github.com/fsprojects/Paket/issues?utf8=%E2%9C%93&q=label%3Apack%2Funpack%20) zip file, which basically contains the specified files and the nuspec you wrote.
+
+In essence (read the spec for details):
+ - We have a number of tfms ([target framework monikers](https://docs.microsoft.com/en-us/nuget/schema/target-frameworks))
+ - You can specify dependencies and files for a particular tfm
+ - A set of well defined places to drop files
+   Here is a quote from the paket [code-base](https://github.com/fsprojects/Paket/blob/73664a750b8c0b1ac4cf6ed795f72c4e1380e9d3/src/Paket.Core/Installation/InstallModel.fs#L334-L385) (a bit shortened to the important parts):
+   ```fsharp
+    let getCompileRefAssembly (p:UnparsedPackageFile) =
+        (trySscanf "ref/%A{tfm}/%A{noSeperator}" p.PathWithinPackage : (Tfm * string) option)
+
+    let getRuntimeAssembly (p:UnparsedPackageFile) =
+        (trySscanf "lib/%A{tfm}/%A{noSeperator}" p.PathWithinPackage : (Tfm * string) option)
+        |> Option.orElseWith (fun _ ->
+            (trySscanf "runtimes/%A{rid}/lib/%A{tfm}/%A{noSeperator}" p.PathWithinPackage : (Rid * Tfm * string) option)
+        |> Option.orElseWith (fun _ ->
+            (trySscanf "lib/%A{noSeperator}" p.PathWithinPackage : string option))
+
+    let getCompileLibAssembly (p:UnparsedPackageFile) =
+        // %s because 'native' uses subfolders...
+        (trySscanf "lib/%A{tfm}/%s" p.PathWithinPackage : (Tfm * string) option)
+        |> Option.orElseWith (fun _ ->
+            (trySscanf "lib/%A{noSeperator}" p.PathWithinPackage : string option))
+
+    let getRuntimeLibrary (p:UnparsedPackageFile) =
+        (trySscanf "runtimes/%A{rid}/nativeassets/%A{tfm}/%A{noSeperator}" p.PathWithinPackage : (Rid * Tfm * string) option)
+        |> Option.orElseWith (fun _ ->
+            (trySscanf "runtimes/%A{rid}/native/%A{noSeperator}" p.PathWithinPackage : (Rid * string) option))
+
+    let getMsbuildFile (p:UnparsedPackageFile) =
+        (trySscanf "build/%A{tfm}/%A{noSeperator}" p.PathWithinPackage : (Tfm * string) option)
+        |> Option.orElseWith (fun _ ->
+            (trySscanf "build/%A{noSeperator}" p.PathWithinPackage : string option))    
+   ```
+   You should recognize the different folder patterns like `lib/net45/MyLibrary.dll` would fit into `lib/%A{tfm}/%A{noSeperator}` or `lib/<tfm>/*.dll`.
+
+### Installing files / framework handling and restrictions
+
+After we have analyzed the file and know which files are in it we can use this information to edit the project files.
