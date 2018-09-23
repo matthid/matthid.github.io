@@ -6,7 +6,7 @@
 ./scripts/build.sh # create docker container for jekyll
 . scripts/config.sh
 
-run jekyll service # to run locally and open localhost:4000
+INTERACTIVE=y run jekyll service # to run locally and open localhost:4000
 ```
 
 ## Thanks to

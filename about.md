@@ -13,3 +13,8 @@ title: About
 * [GitHub @matthid](https://github.com/matthid)
 * [Stackoverflow](https://stackoverflow.com/users/1269722/matthid)
 
+## Links
+
+* Teamspeak: ts3.yaaf.de
+* [Mail](http://mail.yaaf.de)
+* [Drive](http://drive.yaaf.de)
