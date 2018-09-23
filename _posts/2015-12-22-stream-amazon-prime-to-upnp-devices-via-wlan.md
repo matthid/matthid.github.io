@@ -1,4 +1,7 @@
-﻿# Date: 2015-12-22; Title: Stream Amazon Prime to UPNP Devices via WLAN; Tags: blog,yaaf,amazon,prime,obs,serviio,nginx; Author: Matthias Dittrich
+---
+layout: post
+title: "Stream Amazon Prime to UPNP Devices via WLAN"
+---
 
 Ok this is weird: 
 I simply want to stream an Amazon Prime movie to our receiver supporting UPNP to be able to watch the film on the big TV screen 
@@ -40,11 +43,11 @@ The only problem is that I'm using windows and had no intention of compiling any
 For recording I used the following trick:
 
  - Before starting chrome change the default audio device to a virtual one (or one that isn't connected/unused):
-   ![Screenshot Setup before starting chrome](/Content/images/blog/2015-12-22/pre-chrome.jpg "pre-chrome")
+   ![Screenshot Setup before starting chrome](/public/images/blog/2015-12-22/pre-chrome.jpg "pre-chrome")
  - Now I can add the device to OBS (and hear it later correctly synced on the UPNP device via stream)
  - Start chrome
  - Add the chrome windows to OBS as you like:
-   ![Screenshot Setup after starting chrome](/Content/images/blog/2015-12-22/after-chrome.jpg "after-chrome")
+   ![Screenshot Setup after starting chrome](/public/images/blog/2015-12-22/after-chrome.jpg "after-chrome")
 
 
 For nginx I basically used the exact configuration from the documentation above:
@@ -128,20 +131,20 @@ After starting nginx in a console window (or by double clicking nginx.exe) your 
 
 - First make sure you setup the "Stream" settings exactly the way you setup the nginx configuration.
   Note that the Stream key doesn't matter (here I use "test") but is used again later:
-  ![Screenshot Setup 'Stream'](/Content/images/blog/2015-12-22/setup-stream.jpg "setup-stream")
+  ![Screenshot Setup 'Stream'](/public/images/blog/2015-12-22/setup-stream.jpg "setup-stream")
 
 - Then setup the output in a way suited to you (I only use an higher bitrate for better quality):
-  ![Screenshot Setup 'Output'](/Content/images/blog/2015-12-22/setup-output.jpg "setup-output")
+  ![Screenshot Setup 'Output'](/public/images/blog/2015-12-22/setup-output.jpg "setup-output")
 
 - Then setup the video in a way suited to your TV (change to the optimal resolution for your TV):
-  ![Screenshot Setup 'Video'](/Content/images/blog/2015-12-22/setup-video.jpg "setup-video")
+  ![Screenshot Setup 'Video'](/public/images/blog/2015-12-22/setup-video.jpg "setup-video")
 
 Now the stream can be started successfully and we can even watch it via `http://localhost:8088` by entering `rtmp://127.0.0.1:8089/live/test` in the box.
 
 We are almost there, because we only need to bridge the gap between the rtmp stream and the UPNP device. 
 Luckily [serviio](http://serviio.org/download) can close the gap:
 
-![Screenshot Setup 'Serviio'](/Content/images/blog/2015-12-22/add-stream-to-serviio.jpg "add-stream-to-serviio")
+![Screenshot Setup 'Serviio'](/public/images/blog/2015-12-22/add-stream-to-serviio.jpg "add-stream-to-serviio")
 
 ## Further information for this setup
 

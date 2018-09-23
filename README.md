@@ -1,8 +1,13 @@
 # Yaaf.de blog
 
-## Get started
+## Docs
 
+```bash
+./scripts/build.sh # create docker container for jekyll
+. scripts/config.sh
 
+run jekyll service # to run locally and open localhost:4000
+```
 
 ## Thanks to
 

@@ -1,4 +1,7 @@
-﻿# Date: 2014-08-28; Title: New Website; Tags: yaaf; Author: Matthias Dittrich
+---
+layout: post
+title: New Website
+---
 
 ## The first step is done!
 

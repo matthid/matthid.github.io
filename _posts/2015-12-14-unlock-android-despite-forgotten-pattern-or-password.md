@@ -1,4 +1,7 @@
-﻿# Date: 2015-12-14; Title: Unlock Android despite forgotten Pattern or Password; Tags: android,root,hacking,kingroot; Author: Matthias Dittrich
+---
+layout: post
+title: Unlock Android despite forgotten Pattern or Password
+---
 
 ## The Problem
 

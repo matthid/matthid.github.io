@@ -1,4 +1,7 @@
-﻿# Date: 2017-10-16; Title: Paket internals - Framework Restrictions; Tags: fsharp,expression,paket,nuget; Author: Matthias Dittrich
+---
+layout: post
+title: "Paket internals - Framework Restrictions"
+---
 
 ## Intro
 
@@ -11,8 +14,8 @@
 
 There was a time I remember perfectly well when I thought that NuGet works perfectly fine. Additionally, I was already heavily contributing to `FSharp.Formatting` and from time to time to `FAKE`, so how could I use just another tool which might need some attention?
 
-![Paket Contributions](/Content/images/blog/2017-10-16/paket_contributions.png "paket")
-![FSharp.Formatting Contributions](/Content/images/blog/2017-10-16/fsf_contributions.png "fsf")
+![Paket Contributions](/public/images/blog/2017-10-16/paket_contributions.png "paket")
+![FSharp.Formatting Contributions](/public/images/blog/2017-10-16/fsf_contributions.png "fsf")
 
 Why would you contribute to a project when you still use the alternative?
 Well, time has changed - after wasting enough time with NuGet updates and other shortcomings I'm now a happy Paket user and contributor for quite some time now. 

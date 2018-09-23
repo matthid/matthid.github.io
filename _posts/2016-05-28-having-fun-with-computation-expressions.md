@@ -1,4 +1,7 @@
-﻿# Date: 2016-05-28; Title: Having Fun with Computation Expressions; Tags: fsharp,computation,expression,delay; Author: Matthias Dittrich
+---
+layout: post
+title: "Having Fun with Computation Expressions"
+---
 
 Or how I build a generic computation builder library.
 

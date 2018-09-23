@@ -1,12 +1,15 @@
-﻿# Date: 2015-12-17; Title: News replaced with blog; Tags: blog,yaaf; Author: Matthias Dittrich
+---
+layout: post
+title: News replaced with blog
+---
 
 Just a short information that now the 'news' section has been replaced with a blog here on yaaf.de.
 At the end of this post I show all the code needed to include a basic markdown based blog to your website via `FSharp.Formatting`!
 
 Some more features will be added soon:
 
- - Ability to comment blog posts.
- - Ability to filter posts by year and tag.
+- Ability to comment blog posts.
+- Ability to filter posts by year and tag.
 
 The blog was build with the lovely [FSharp.Formatting](https://github.com/tpetricek/FSharp.Formatting/) library (the first time I actually used it as a regular library!).
 It's a very simple in-memory implementation (which is fine for the low number of posts) and all posts are markup files in a folder which are processed to html by `FSharp.Formatting`.
@@ -14,7 +17,7 @@ I added some trickery to allow embedding of title, author, date and tags into th
 
 A blog entry file looks like this:
 
-```markdown
+```md
 # Date: 2015-12-17; Title: News replaced with blog; Tags: blog,yaaf; Author: Matthias Dittrich
 
 Just a short information that now the 'news' section has been replaced with a blog here on yaaf.de.

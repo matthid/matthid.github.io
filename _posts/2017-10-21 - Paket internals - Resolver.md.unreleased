@@ -1,5 +1,7 @@
-﻿# Date: 2017-08-21; Title: Paket internals - how it works for you; Tags: fsharp,expression,paket,nuget; Author: Matthias Dittrich
-
+﻿---
+layout: post
+title: Paket internals - how it works for you
+---
 
 ```fsharp
 
