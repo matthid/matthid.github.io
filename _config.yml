@@ -11,7 +11,7 @@ title:            matthid
 tagline:          'Just another blog'
 description:      'Some thoughts about some of the stuff I do. You can find me on twitter <a href="https://twitter.com/matthi__d" target="_blank">@matthi__d</a> and on github <a href="https://github.com/matthid/" target="_blank">@matthid</a>.'
 url:              https://matthid.de
-baseurl:          /
+baseurl:          ''
 
 author:
   name:           'Matthias Dittrich'
