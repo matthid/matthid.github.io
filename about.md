@@ -14,10 +14,9 @@ title: About
 * [LinkedIn](https://www.linkedin.com/in/matthias-dittrich-51848861/)
 * [XING](https://www.xing.com/profile/Matthias_Dittrich13)
 * [Twitter @matthi__d](https://twitter.com/matthi__d)
+* E-Mail: <a href="http://scr.im/matthid">m...@g...l.com</a>
 
 ## Links
 
 * Teamspeak: matthid.de
-* [Mail](http://mail.matthid.de)
-* [Drive](http://drive.matthid.de)
-* [Calendar](http://calendar.matthid.de)
+
