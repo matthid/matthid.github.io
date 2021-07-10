@@ -7,8 +7,6 @@ title: Legal
 
 <p class="message">
   Matthias Dittrich<br>
-  Hengersbergerstraße 71<br>
-  94469 Deggendorf<br>
   E-Mail: <a href="http://scr.im/matthid">m...@g...l.com</a>
 </p>
 

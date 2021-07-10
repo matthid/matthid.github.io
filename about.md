@@ -9,13 +9,15 @@ title: About
 
 ## Contact
 
-* [Twitter @matthi__d](https://twitter.com/matthi__d)
 * [GitHub @matthid](https://github.com/matthid)
 * [Stackoverflow](https://stackoverflow.com/users/1269722/matthid)
+* [LinkedIn](https://www.linkedin.com/in/matthias-dittrich-51848861/)
+* [XING](https://www.xing.com/profile/Matthias_Dittrich13)
+* [Twitter @matthi__d](https://twitter.com/matthi__d)
 
 ## Links
 
-* Teamspeak: ts3.yaaf.de
-* [Mail](http://mail.yaaf.de)
-* [Drive](http://drive.yaaf.de)
-* [Calendar](http://calendar.yaaf.de)
+* Teamspeak: matthid.de
+* [Mail](http://mail.matthid.de)
+* [Drive](http://drive.matthid.de)
+* [Calendar](http://calendar.matthid.de)
