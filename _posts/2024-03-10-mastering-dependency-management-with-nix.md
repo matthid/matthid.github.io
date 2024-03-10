@@ -5,6 +5,22 @@ title: "Mastering Dependency Management with Nix in Machine Learning Projects"
 
 Navigating the complexities of dependency management in large-scale machine learning projects can quickly become an overwhelming task. While traditional approaches offer some relief, they often fall short as project complexity increases, introducing inefficiencies that hinder development. This blog post is a chronicle of transitioning from conventional dependency management practices to adopting Nix, marking a significant shift towards simplifying and enhancing the development workflow.
 
+## Overview
+
+- [Intro](#intro)
+- [From Chaos to Order](#from-chaos-to-order)
+- [Discovering Nix: A Turning Point](#discovering-nix-a-turning-point)
+- [Exploring Nix Syntax with `nix-repl`](#exploring-nix-syntax-with-nix-repl)
+- [Elevating Your Nix Skills: Incorporating CUDA and Docker](#elevating-your-nix-skills-incorporating-cuda-and-docker)
+  - [Structuring Complex Dependencies](#structuring-complex-dependencies)
+  - [Building Your First Docker Container with Nix](#building-your-first-docker-container-with-nix)
+- [Customizing Dependencies in Nix](#customizing-dependencies-in-nix)
+  - [Case Study: Integrating PyTorch Lightning](#case-study-integrating-pytorch-lightning)
+  - [Packaging docTR with Nix: A Practical Example](#packaging-doctr-with-nix-a-practical-example)
+  - [Tailoring ffmpeg with Custom Build Flags in Nix](#tailoring-ffmpeg-with-custom-build-flags-in-nix)
+- [Optimizing Docker Container Layering with Custom Strategies](#optimizing-docker-container-layering-with-custom-strategies)
+- [Conclusion](#conclusion)
+
 ## Intro
 
 > Note: This journey into the world of Nix, supplemented by insights from AI tools including ChatGPT, captures my initial exploration into employing Nix for effective dependency management. I warmly welcome feedback and insights from the broader Nix community.
