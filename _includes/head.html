@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/{{ site.baseurl }}public/css/poole.css">
   <link rel="stylesheet" href="/{{ site.baseurl }}public/css/syntax.css">
   <link rel="stylesheet" href="/{{ site.baseurl }}public/css/hyde.css">
+  <link rel="stylesheet" href="/{{ site.baseurl }}public/css/style.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
 
   <!-- Icons -->
@@ -26,4 +27,35 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Adjust the selector to match the container of your content
+      const headings = document.querySelectorAll('.post h1, .post h2, .post h3, .post h4, .post h5, .post h6');
+    
+      headings.forEach(function (heading) {
+        if (!heading.id) return; // Skip headings without an ID
+
+        // Create a wrapper span for the heading text
+        const textWrapper = document.createElement('span');
+        textWrapper.innerHTML = heading.innerHTML; // Move existing content into the wrapper
+
+        // Clear the heading and append the text wrapper back into it
+        heading.innerHTML = '';
+        heading.appendChild(textWrapper);
+
+        // Create an anchor element
+        const anchor = document.createElement('a');
+        anchor.href = '#' + heading.id;
+        anchor.className = 'heading-anchor';
+        anchor.innerHTML = '&#128279;'; // Use the link icon or similar symbol
+        heading.appendChild(anchor); // Append the anchor to the heading
+
+        // Optional: Make the entire heading clickable
+        textWrapper.style.cursor = 'pointer';
+        textWrapper.onclick = function() {
+          window.location.href = '#' + heading.id;
+        };
+      });
+    });
+  </script>
 </head>

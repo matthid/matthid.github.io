@@ -1,16 +1,11 @@
 FROM jekyll/jekyll:3.8
 
-RUN   apk update  &&  \
-      apk add --no-cache  ruby-dev && \
-      apk add --no-cache make  && \
-      apk add --no-cache gcc  && \
-      apk add --no-cache libc-dev && \
-      apk add --no-cache python  && \
-      apk add --no-cache py-pygments && \
-      gem install pygments.rb && \
-      apk del ruby-dev && \
-      apk del make && \
-      apk del gcc && \
-      apk del libc-dev && \
-      gem install redcarpet
+RUN   apk update && \
+      apk upgrade && \
+      apk add --no-cache ruby-dev make gcc libc-dev python  py-pygments && \
+      gem install jekyll -v 3.9.3 && \
+      gem install pygments.rb redcarpet && \
+      apk del ruby-dev make gcc libc-dev && \
+      gem install redcarpet kramdown-parser-gfm && \
+      rm -rf /var/cache/apk/*
 

@@ -1,0 +1,12 @@
+.heading-anchor {
+  display: inline; /* Always show the anchor */
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Use the same color as the heading text */
+  font-size: 0.75em; /* Make the icon smaller */
+  margin-left: 8px; /* Space between the heading text and the icon */
+}
+  
+  /* Optionally, style the hover state */
+.heading-anchor:hover {
+  color: #0056b3; /* Change color on hover */
+}
