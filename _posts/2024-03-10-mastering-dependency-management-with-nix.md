@@ -37,9 +37,9 @@ nix-env --version
 
 > Note: If you have a systems with enhanced security measures the official way might not work but the community has built an easy-to use installer for you [Determinate Nix Installer][2]
 
-(alternative, if the offical way fails)
+(Alternative, if the offical way fails)
 ```bash
-# Install Nix (Determinate Nix Installer, works on hardened systems like fedora)
+# Install Nix (Determinate Nix Installer, works on systems with enhanced security, like fedora)
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
 # Verify the installation
